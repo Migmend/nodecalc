@@ -1,18 +1,18 @@
 const rs = require("readline-sync");
 
 const operations = ["+", "-", "*", "/"];
-function firstQuestion() {
-  let whatOperation = rs.question("what operation would you like to perform? ");
+function getOperator() {
+  let whatOperation = rs.question("What operation would you like to perform? ");
   if (operations.includes(whatOperation)) {
     console.log(whatOperation);
     return whatOperation;
   } else {
-    console.log("that is not a valid operator");
-    return firstQuestion();
+    console.log("That is not a valid operator");
+    return getOperator();
   }
 }
 
-const operator = firstQuestion();
+const operator = getOperator();
 
 function calculate(num1, num2, operator) {
   if (operator === "+") {
