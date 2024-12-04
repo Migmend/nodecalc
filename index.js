@@ -8,11 +8,11 @@ function firstQuestion() {
     return whatOperation;
   } else {
     console.log("that is not a valid operator");
-    firstQuestion();
+    return firstQuestion();
   }
 }
 
-firstQuestion();
+const operator = firstQuestion();
 
 function calculate(num1, num2, operator) {
   if (operator === "+") {
@@ -32,7 +32,4 @@ function calculate(num1, num2, operator) {
 const firstNumber = rs.questionInt("Please enter the first number ");
 const secondNumber = rs.questionInt("Please enter the second number ");
 
-console.log(
-  "The result is ",
-  calculate(firstNumber, secondNumber, firstQuestion())
-);
+console.log("The result is ", calculate(firstNumber, secondNumber, operator));
